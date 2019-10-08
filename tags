@@ -1,0 +1,22 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+main	Linux_Test3/fastarr.c	/^int main(void) {$/;"	f	language:C	signature:(void)
+main	Linux_Test3/work2.c	/^int main()$/;"	f	language:C
+main	fastarr.c	/^int main(void) {$/;"	f	language:C	signature:(void)
+main	work2.c	/^int main()$/;"	f	language:C
+showarr	Linux_Test3/work2.c	/^void showarr(int *a){$/;"	f	language:C	signature:(int *a)
+showarr	work2.c	/^void showarr(int *a){$/;"	f	language:C	signature:(int *a)
+sort	Linux_Test3/fastarr.c	/^void sort(int * a, int len) {$/;"	f	language:C	signature:(int * a, int len)
+sort	fastarr.c	/^void sort(int * a, int len) {$/;"	f	language:C	signature:(int * a, int len)
+sortdata	Linux_Test3/work2.c	/^void sortdata(int * a, int len) {\/\/排序函数 $/;"	f	language:C	signature:(int * a, int len)
+sortdata	work2.c	/^void sortdata(int * a, int len) {\/\/排序函数 $/;"	f	language:C	signature:(int * a, int len)
+writeToarr	Linux_Test3/work2.c	/^int writeToarr (int a[])$/;"	f	language:C	signature:(int a[])
+writeToarr	work2.c	/^int writeToarr (int a[])$/;"	f	language:C	signature:(int a[])
+writedata	Linux_Test3/work2.c	/^void writedata(int a[])\/\/将排序好的数据写入文件中 $/;"	f	language:C	signature:(int a[])
+writedata	work2.c	/^void writedata(int a[])\/\/将排序好的数据写入文件中 $/;"	f	language:C	signature:(int a[])
+writefile	Linux_Test3/work2.c	/^void writefile(int a[])\/\/生成随机数并写入文件 $/;"	f	language:C	signature:(int a[])
+writefile	work2.c	/^void writefile(int a[])\/\/生成随机数并写入文件 $/;"	f	language:C	signature:(int a[])
