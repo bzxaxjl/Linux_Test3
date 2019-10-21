@@ -1,0 +1,22 @@
+ 473  tree
+  474  cd code
+  475  cd exam
+  476  gcc remotetest.c -o remotetest -L../staticlib/ -lstatic -I../staticlib/
+  477  ./remotetest
+  478  cd week6/code
+  479  cd staticlib
+  480  ./localtest
+  481  gcc localtest.c -o localtest -L. -lstatic
+  482  ./localtest
+  483  cd git/week6/
+  484  tree
+  485  cd code/dynamiclib/
+  486  gcc -shared -fPIC -o libtest.so aoprand.c base.c
+  487  cd ../
+  488  cd exam
+  489  gcc dytestrt.c -o dltest -I../dynamiclib -ldl
+  490  dltest
+  491  ./dltest
+  492  gcc dytestrt.c -o dltest -I../dynamiclib -ldl
+  493  ./dltest
+
