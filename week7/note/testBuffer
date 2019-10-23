@@ -1,0 +1,78 @@
+那么他的输出应该类似于
+
+write to stdout
+
+printf
+
+注意输出中只包含了一个“printf”。 
+
+而将其输出重定向到文件后，输出变为
+
+write to stdout
+
+printf
+
+printf
+
+这里有两个“printf”。
+
+
+而当我们把输出中的换行符去掉时
+
+#include <stdio.h>
+
+#include <unistd.h>
+
+#include <stdlib.h>
+
+#include <sys/types.h>
+
+ 
+
+char buf[] = {"write to stdout\n"};
+
+int main()
+
+{
+
+pid_t id;
+
+ 
+
+if(write(STDOUT_FILENO, buf, sizeof(buf) - 1) != sizeof(buf) - 1)
+
+perror("can't write");
+
+printf("printf "); //注意这里我们把换行符\n替换为一个空格
+
+id = fork();
+
+if(id < 0)
+
+perror("fork error");
+
+ 
+
+exit(0);
+
+}
+
+
+观察程序在终端中的输出，变成了：
+
+write to stdout
+
+printf
+
+printf
+
+
+可以看到，终端中的输出也出现了两个“printf ”。
+
+ork()函数可以把进程的数据段、堆栈段等内容独立复制出来，也包括输出缓冲区。 
+
+第一段代码中的输出“printf”后即换行。由于printf函数在输出到终端时是以行缓存的方式进行的，所以在遇到换行符后就会清空缓冲区。而fork成功之后，子进程的缓冲区跟父进程一样，都是空的，所以只会输出一次“printf”（也就是父进程输出的那次）。而在输出到文件时，printf函数是以全缓存的方式进行输出的，即使遇到换行符也不会清空缓冲区，所以fork之后，子进程的缓冲区也包含了“printf”的内容，所以会输出两次（父进程、子进程各输出一次）。 
+
+第二段代码中，我们特意取消掉换行符。可以看到，没有换行符之后，即使是输出到终端，输出“printf”后父进程也不会清空缓冲区。fork之后子进程输出缓冲区中依然会有“printf”的内容，所以会同样会输出两次“printf”。
+
+注意到，不管是哪段代码，或是哪种输出方式（输出到终端或者输出到文件），“write to stdout”都只出现了一次，这是因为write()函数输出是没有缓冲的。

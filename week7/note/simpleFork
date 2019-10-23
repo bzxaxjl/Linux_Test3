@@ -1,0 +1,20 @@
+执行结果：
+输出到标准输出
+[root@happy bin]# ./simplefork
+before fork
+Child changed
+globa = 5 vari = 4
+Parent did not changde
+globa = 4 vari = 5
+
+重定向到文件时before fork输出两边
+[root@happy bin]# ./simplefork>temp
+[root@happy bin]# cat temp
+before fork
+Child changed
+globa = 5 vari = 4
+before fork
+Parent did not changde
+globa = 4 vari = 5
+
+分析直接运行程序时标准输出是行缓冲的，很快被新的一行冲掉。而重定向后，标准输出是全缓冲的。当调用fork时before fork这行仍保存在缓冲中，并随着数据段复制到子进程缓冲中。这样，这一行就分别进入父子进程的输出缓冲中，余下的输出就接在了这一行的后面。
