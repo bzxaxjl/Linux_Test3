@@ -1,0 +1,32 @@
+rlk@ubuntu:code$ ./test1
+test1:pid = 2987,ppid = 2979
+
+rlk@ubuntu:code$ ./test2
+-----Before Main-----!
+Main!
+-----callback3-----!
+-----callback2-----!
+-----callback1-----!
+-----After Main-----!
+
+
+rlk@ubuntu:code$ ./test3
+before main test
+test2:pid=3165 ,ppid = 2979
+test2: 0 ,./test3
+callback3 is running
+callback2 is running
+callback1 is running
+
+rlk@ubuntu:code$ ./test4
+test4:pid=2995,ppid=2979
+test4:0 : ./test4
+-----test4 end-----!
+
+rlk@ubuntu:code$ ./call1
+call1:pid=3002,ppid=2979
+-----after calling-----
+
+
+
+
