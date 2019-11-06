@@ -27,6 +27,15 @@ rlk@ubuntu:code$ ./call1
 call1:pid=3002,ppid=2979
 -----after calling-----
 
+rlk@ubuntu:code$ ./fork1
+child:pid=3772,ppid=3771,ret=0
+&k=0x562dd29eb010,&r=0x562dd29eb014,&y=0x7ffdac06d5f0
+child:k=10,r=10,y=10
+parent:pid=3771,ppid=3190,ret=3772
+parent:&k=0x562dd29eb010,&r=0x562dd29eb014,&y=0x7ffdac06d5f0
+parent:k=9,r=9,y=9
+
+
 
 
 
