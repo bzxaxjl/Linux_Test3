@@ -1,0 +1,32 @@
+exit(0);
+
+rlk@ubuntu:code$ gcc 1-1.c -o 1-1
+rlk@ubuntu:code$ ./1-1
+----Before main!----
+----After main!----
+test message!----callback2----
+----callback1----
+rlk@ubuntu:code$ cat test.dat
+ 
+
+_exit(0);
+
+hello worldrlk@ubuntu:code$ gcc 1-1.c -o 1-1
+rlk@ubuntu:code$ ./1-1
+----Before main!----
+----After main!----
+rlk@ubuntu:code$ cat test.dat
+rlk@ubuntu:code$ 
+
+return 0;
+
+rlk@ubuntu:code$ gcc 1-1.c -o 1-1
+rlk@ubuntu:code$ ./1-1
+----Before main!----
+----After main!----
+test message!----callback2----
+----callback1----
+rlk@ubuntu:code$ cat test.dat
+hello worldrlk@ubuntu:code$ 
+
+
