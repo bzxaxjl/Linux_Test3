@@ -49,6 +49,31 @@ parent pid =2760:g=100,t=-1734755872,s=300
 *** stack smashing detected ***: <unknown> terminated
 Aborted
 
+1-6
+
+rlk@ubuntu:code$ ./1-6
+--------address of var-------
+child pid=2983
+&g=  0x556feb34d010
+&l=  0x7ffc396d1d00
+&s=  0x556feb34d014
+value in child
+child pid=2983
+g=100
+l=200
+s=300
+--------address of var in parent-------
+parent pid =2982
+&g=  0x556feb34d010
+&l=  0x7ffc396d1d00
+&s=  0x556feb34d014
+value in parent
+parent g=100
+l=-350959072
+s=300
+*** stack smashing detected ***: <unknown> terminated
+Aborted
+
 
 
 
