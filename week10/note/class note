@@ -29,4 +29,26 @@ test message!----callback2----
 rlk@ubuntu:code$ cat test.dat
 hello worldrlk@ubuntu:code$ 
 
+1-2
+return 0;
+rlk@ubuntu:code$ ./1-2
+before child pid =2745:&g=0x564ba5901010,&t=0x7ffdea91a6e0,&s=0x564ba5901014
+after child pid = 2745:g=100,t=200,s=300
+parent pid =2744:&g=0x564ba5901010,&t=0x7ffdea91a6e0,&s=0x564ba5901014
+parent pid =2744:g=100,t=-1519384096,s=300
+*** stack smashing detected ***: <unknown> terminated
+Aborted
+
+//return 0;
+
+rlk@ubuntu:code$ ./1-2
+before child pid =2761:&g=0x55ea98b9c010,&t=0x7fffd2c02940,&s=0x55ea98b9c014
+after child pid = 2761:g=100,t=200,s=300
+parent pid =2760:&g=0x55ea98b9c010,&t=0x7fffd2c02940,&s=0x55ea98b9c014
+parent pid =2760:g=100,t=-1734755872,s=300
+*** stack smashing detected ***: <unknown> terminated
+Aborted
+
+
+
 

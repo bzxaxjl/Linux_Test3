@@ -18,6 +18,7 @@ int main()
 		s=300;
 		printf("after child pid = %d:g=%d,t=%d,s=%d\n",getpid(),g,t,s);
 		sleep(3);
+		//return 0;
 	}
 	else{
 		printf("parent pid =%d:&g=%p,&t=%p,&s=%p\n",getpid(),&g,&t,&s);
