@@ -7,6 +7,6 @@
 #include<sys/time.h>
 #include <sys/types.h>
 
-
+#define LOOP 10000000
 #define NUM 4
 
